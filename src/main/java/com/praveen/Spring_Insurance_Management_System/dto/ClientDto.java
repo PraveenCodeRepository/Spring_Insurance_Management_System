@@ -8,7 +8,7 @@ public class ClientDto {  // owning side - child
     private String clientName;
     private String clientDateOfBirth;
     private String clientAddress;
-    private String clientContactInformation;
+    private String clientMobileNumber;
     private InsurancePolicy insurancePolicy; 
 
     public ClientDto() {
@@ -16,12 +16,12 @@ public class ClientDto {  // owning side - child
     }
 
     public ClientDto(Long clientId, String clientName, String clientDateOfBirth, String clientAddress,
-                     String clientContactInformation, InsurancePolicy insurancePolicy) {
+                     String clientMobileNumber, InsurancePolicy insurancePolicy) {
         this.clientId = clientId;
         this.clientName = clientName;
         this.clientDateOfBirth = clientDateOfBirth;
         this.clientAddress = clientAddress;
-        this.clientContactInformation = clientContactInformation;
+        this.clientMobileNumber = clientMobileNumber;
         this.insurancePolicy = insurancePolicy;
     }
 
@@ -57,12 +57,12 @@ public class ClientDto {  // owning side - child
         this.clientAddress = clientAddress;
     }
 
-    public String getClientContactInformation() {
-        return clientContactInformation;
+    public String getClientMobileNumber() {
+        return clientMobileNumber;
     }
 
-    public void setClientContactInformation(String clientContactInformation) {
-        this.clientContactInformation = clientContactInformation;
+    public void setClientMobileNumber(String clientMobileNumber) {
+        this.clientMobileNumber = clientMobileNumber;
     }
 
     public InsurancePolicy getInsurancePolicy() {

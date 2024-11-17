@@ -69,8 +69,8 @@ public class ClientService {
 	    if (clientDto.getClientAddress() != null) {
 	        existClient.setClientAddress(clientDto.getClientAddress());
 	    }
-	    if (clientDto.getClientContactInformation() != null) {
-	        existClient.setClientContactInformation(clientDto.getClientContactInformation());
+	    if (clientDto.getClientMobileNumber() != null) {
+	        existClient.setClientMobileNumber(clientDto.getClientMobileNumber());
 	    }
 	    if (clientDto.getClientDateOfBirth() != null) {
 	        existClient.setClientDateOfBirth(clientDto.getClientDateOfBirth());
@@ -117,6 +117,14 @@ public class ClientService {
 		  clientRepository.delete(deleteClient);
 		
 	}
+
+
+		public ClientDto getClientByClientMobileNumber(String clientMobileNumber) {
+			
+			Client clientFound = clientRepository.findClientByClientMobileNumber(clientMobileNumber)
+	                  .orElseThrow(()-> new ClientNotFoundException("Client not found with mobile number : "+clientMobileNumber));
+	            return ClientMapper.toClientDto(clientFound);
+		}
         
 	
 }

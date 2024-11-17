@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.praveen.Spring_Insurance_Management_System.dto.ClientDto;
@@ -86,6 +87,19 @@ public class ClientController {
 		}catch(Exception ex) {
 	         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
+	}
+	
+	@GetMapping("/getClient")
+	public ResponseEntity<ClientDto> getClientByClientMobileNumber(@RequestParam String clientMobileNumber){
+		try {
+			 ClientDto clientDto = clientService.getClientByClientMobileNumber(clientMobileNumber);
+			return ResponseEntity.status(HttpStatus.OK).body(clientDto);
+		}catch(ClientNotFoundException ex) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+		}catch(Exception ex) {
+	         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+
 	}
 
 

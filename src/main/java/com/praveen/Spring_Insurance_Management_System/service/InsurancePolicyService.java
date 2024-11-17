@@ -20,6 +20,11 @@ public class InsurancePolicyService {
 	private InsurancePolicyRepository insurancePolicyRepository;
 
 	public InsurancePolicyDto createInsurancePolicy(InsurancePolicyDto insurancePolicyDto) {
+		
+		 if (insurancePolicyDto == null) {
+		        throw new IllegalArgumentException("InsurancePolicyDto cannot be null");
+		    }
+
 	    InsurancePolicy insurancePolicy = InsurancePolicyMapper.toInsurancePolicyEntity(insurancePolicyDto);
 	    
 	    InsurancePolicy insurancePolicyCreated = insurancePolicyRepository.save(insurancePolicy);

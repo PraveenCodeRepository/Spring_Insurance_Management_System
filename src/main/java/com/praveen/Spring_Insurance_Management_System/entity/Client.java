@@ -29,7 +29,7 @@ public class Client {    // owning side - child
 	private String clientAddress;
 	
 	@Column(name="client_contact_information")
-	private String clientContactInformation;
+	private String clientMobileNumber;
 	
 	@ManyToOne
 	@JoinColumn(name="insurance_policy_id")
@@ -40,13 +40,13 @@ public class Client {    // owning side - child
 	}
 
 	public Client(Long clientId, String clientName, String clientDateOfBirth, String clientAddress,
-			String clientContactInformation, InsurancePolicy insurancePolicy) {
+			String clientMobileNumber, InsurancePolicy insurancePolicy) {
 		super();
 		this.clientId = clientId;
 		this.clientName = clientName;
 		this.clientDateOfBirth = clientDateOfBirth;
 		this.clientAddress = clientAddress;
-		this.clientContactInformation = clientContactInformation;
+		this.clientMobileNumber = clientMobileNumber;
 		this.insurancePolicy = insurancePolicy;
 	}
 
@@ -82,12 +82,12 @@ public class Client {    // owning side - child
 		this.clientAddress = clientAddress;
 	}
 
-	public String getClientContactInformation() {
-		return clientContactInformation;
+	public String getClientMobileNumber() {
+		return clientMobileNumber;
 	}
 
-	public void setClientContactInformation(String clientContactInformation) {
-		this.clientContactInformation = clientContactInformation;
+	public void setClientMobileNumber(String clientMobileNumber) {
+		this.clientMobileNumber = clientMobileNumber;
 	}
 
 	public InsurancePolicy getInsurancePolicy() {

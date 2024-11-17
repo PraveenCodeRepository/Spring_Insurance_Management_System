@@ -20,7 +20,7 @@ public class ClientMapper {
 		clientDto.setClientDateOfBirth(client.getClientDateOfBirth());
 		clientDto.setClientName(client.getClientName());
 		clientDto.setClientAddress(client.getClientAddress());
-		clientDto.setClientContactInformation(client.getClientContactInformation());
+		clientDto.setClientMobileNumber(client.getClientMobileNumber());
 		
 		if(client.getInsurancePolicy()!=null)
 		   clientDto.setInsurancePolicy(client.getInsurancePolicy());
@@ -38,7 +38,7 @@ public class ClientMapper {
 			client.setClientName(clientDto.getClientName());
 			client.setClientDateOfBirth(clientDto.getClientDateOfBirth());
 			client.setClientAddress(clientDto.getClientAddress());
-			client.setClientContactInformation(clientDto.getClientContactInformation());
+			client.setClientMobileNumber(clientDto.getClientMobileNumber());
 			
 			if(clientDto!=null)
 			client.setInsurancePolicy(clientDto.getInsurancePolicy());
